@@ -1,0 +1,30 @@
+@model BrosBurger.Models.Banners
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1 class="H1Título">Detalhes</h1>
+
+<div>
+    <h4 class="text-light">Banners</h4>
+    <hr />
+    <dl class="row text-white">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.NomeBanner)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.NomeBanner)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.ImagemBanner)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.ImagemBanner)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model?.BannerId" class="btn btn-primary">Editar</a> |
+    <a asp-action="Index">Voltar</a>
+</div>

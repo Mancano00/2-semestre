@@ -1,0 +1,85 @@
+﻿@model IEnumerable<BrosBurger.Models.Produto>
+@{
+  ViewData["Title"] = "Home Page";
+}
+<h1 class="text-center H1Título">Seja bem vindo!</h1>
+<div class="DivCarrossel mb-4">
+  <div id="carouselExampleAutoplaying" class="carousel slide w-75" data-bs-ride="carousel">
+    <div class="carousel-inner">
+      <div data-bs-interval="3000ms" class="carousel-item active DivImagemCarrossel">
+        <img src="~/img/Senai.png" class="d-block w-100 ImagemCarrossel">
+      </div>
+      <div data-bs-interval="3000ms" class="carousel-item  DivImagemCarrossel">
+        <img src="~/img/Fazbear.png" class="d-block w-100 ImagemCarrossel">
+      </div>
+      <div data-bs-interval="3000ms" class="carousel-item DivImagemCarrossel">
+        <img src="~/img/a.png" class="d-block w-100 ImagemCarrossel">
+      </div>
+      <div data-bs-interval="3000ms" class="carousel-item DivImagemCarrossel">
+        <img src="~/img/Segredo.png" class="d-block w-100 ImagemCarrossel">
+      </div>
+      <div data-bs-interval="3000ms" class="carousel-item DivImagemCarrossel">
+        <img src="~/img/Santos.png" class="d-block w-100 ImagemCarrossel">
+      </div>
+      <div data-bs-interval="3000ms" class="carousel-item DivImagemCarrossel">
+        <img src="~/img/sla.png" class="d-block w-100 ImagemCarrossel">
+      </div>
+      <div data-bs-interval="3000ms" class="carousel-item DivImagemCarrossel">
+        <img src="~/img/Ribas.png" class="d-block w-100 ImagemCarrossel">
+      </div>
+      <div data-bs-interval="3000ms" class="carousel-item DivImagemCarrossel">
+        <img src="~/img/Sherek.png" class="d-block w-100 ImagemCarrossel">
+      </div>
+      <div data-bs-interval="3000ms" class="carousel-item DivImagemCarrossel">
+        <img src="~/img/Chavinho.png" class="d-block w-100 ImagemCarrossel">
+      </div>
+    </div>
+  </div>
+</div>
+<hr class="bg-white">
+<div class="ProdutosDiv">
+  @foreach (var item in Model)
+  {
+    <div class="col-12 col-md-6 col-lg-3 m-1">
+      <div class="card CardProduto">
+        @if (item.ImagemProduto.Substring(0, 4) == "http" || item.ImagemProduto.Substring(0, 4) == "data")
+        {
+          <img class="card-img-top CardImagem" src="@Html.DisplayFor(modelItem => item.ImagemProduto)"
+            alt="Imagem de capa do card" width="220px" height="230px">
+        }
+        else
+        {
+          <img class="card-img-top CardImagem" src="~/img/@Html.DisplayFor(modelItem => item.ImagemProduto)"
+            alt="Imagem de capa do card" width="220px" height="230px">
+        }
+        <div class="card-body text-center CorpoCard">
+          <h5 class="text-white card-title">@Html.DisplayFor(modelItem => item.NomeProduto)</h5>
+          <p class="text-white card-text">@Html.DisplayFor(modelItem => item.DescricaoProduto)</p>
+          <button onclick="Detalhes(item)" class="btn btn-outline-light" data-bs-toggle="modal"
+            data-bs-target="#_@item.ProdutoId">@item.ValorProduto.ToString("C")</button>
+        </div>
+      </div>
+    </div>
+    <div class="modal fade DivModal" id="_@item.ProdutoId" tabindex="-1" aria-labelledby="exampleModalLabel"
+      aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content bg-dark">
+          <div class="modal-header text-light">
+            <h1 class="modal-title fs-5" id="exampleModalLabel">@Html.DisplayFor(modelItem => item.NomeProduto)
+            </h1>
+            <button type="button" class="btn-close bg-light" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <img class="card-img-top CardImagem" src="@Html.DisplayFor(modelItem => item.ImagemProduto)"
+              alt="Imagem de capa do card" width="220px" height="230px">
+            <p class="text-light">@Html.DisplayFor(modelItem => item.DescricaoProduto)</p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">R$@Html.DisplayFor(modelItem =>
+            item.ValorProduto)</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  }
+</div>

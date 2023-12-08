@@ -1,0 +1,312 @@
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body{
+  color: #333;
+  background-image: url(https://static.vecteezy.com/ti/vetor-gratis/p3/18745404-design-de-textura-de-marmore-preto-superficie-de-marmore-escuro-colorido-linhas-douradas-curvas-design-de-fundo-abstrato-brilhante-vetor.jpg);
+  font-family: sans-serif;
+  scroll-behavior: smooth;
+  background-repeat: no-repeat;
+  background-size: cover;
+}  
+.butaoNav {
+  color: white;
+}
+.TotalLogin {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 150px;
+}
+.ProdutosDiv {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%;
+  margin-top: 200px;
+  margin-top: 0px;
+}
+.CardProduto {
+  border-radius: 15px;
+}
+.CardImagem {
+  border-top-right-radius: 15px;
+  border-top-left-radius: 15px;
+}
+.CorpoCard {
+  border-top: white 1px solid;
+  background-color: #333 !important;
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+  font-family: fantasy;
+}
+.H1Título {
+  margin: 20px;
+  font-family: fantasy;
+  color: white;
+}
+.ImagemCarrossel {
+  width: 100%;
+  height: 100%;
+  border-radius: 15px;
+  border: 1px solid white;
+}
+.DivCarrossel {
+  display: flex;
+  justify-content: center;
+  align-items: center ;
+}
+.DivImagemCarrossel {
+  height: 350px;
+  background-color: black;
+  border-radius: 15px;
+}
+.Logas {
+  width: 50%;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 40px;
+  background-color: #333;
+  border: 1px solid white;
+  border-radius: 15px;
+}
+@media (max-width:575px){
+  .Logas {
+    width: 70%;
+  }
+}
+@media (max-width:400px){
+  .Logas {
+    width: 100%;
+  }
+}
+.W25 {
+  width: 25%;
+}
+.W10 {
+  width: 10%;
+}
+.W50 {
+  width: 50%;
+}
+.W15 {
+  width: 15%;
+}
+.Tabela {
+  width: 100%;
+}
+.LoginLink::after {
+  content: "Fazer login";
+  font-family: sans-serif;
+  font-size: 14px;
+  z-index: 1;
+  display: none;
+  position: absolute;
+  left: 11.5%;
+  bottom: 65%;
+  background-color: #333;
+  color: white;
+  padding: 5px;
+  border-radius: 5px;
+}
+.LoginLink:hover::after{
+  display: block;
+  transition-delay: 200ms;
+  opacity: 1;
+}
+.UsuarioLink::after {
+  content: "Usuários";
+  font-family: sans-serif;
+  font-size: 14px;
+  z-index: 1;
+  display: none;
+  position: absolute;
+  left: 11.5%;
+  bottom: 65%;
+  background-color: #333;
+  color: white;
+  padding: 5px;
+  border-radius: 5px;
+}
+.UsuarioLink:hover::after{
+  display: block;
+  transition-delay: 200ms;
+  opacity: 1;
+}
+.SobreLink::after {
+  content: "Sobre nós";
+  font-family: sans-serif;
+  font-size: 14px;
+  z-index: 1;
+  display: none;
+  position: absolute;
+  left: 14%;
+  bottom: 65%;
+  background-color: #333;
+  color: white;
+  padding: 5px;
+  border-radius: 5px;
+  transition: 200ms;
+}
+.SobreLink:hover::after{
+  display: block;
+  transition-delay: 200ms;
+  opacity: 1;
+}
+.CategoriaLink::after {
+  content: "Categorias";
+  font-family: sans-serif;
+  font-size: 14px;
+  z-index: 1;
+  display: none;
+  position: absolute;
+  left: 14%;
+  bottom: 65%;
+  background-color: #333;
+  color: white;
+  padding: 5px;
+  border-radius: 5px;
+  transition: 200ms;
+}
+.CategoriaLink:hover::after{
+  display: block;
+  transition-delay: 200ms;
+  opacity: 1;
+}
+.ProdutoLink::after {
+  content: "Produtos";
+  font-family: sans-serif;
+  font-size: 14px;
+  z-index: 1;
+  display: none;
+  position: absolute;
+  left: 16.5%;
+  bottom: 65%;
+  background-color: #333;
+  color: white;
+  padding: 5px;
+  border-radius: 5px;
+  transition: 200ms;
+}
+.ProdutoLink:hover::after{
+  display: block;
+  transition-delay: 200ms;
+  opacity: 1;
+}
+.BannersLink::after {
+  content: "Banners";
+  font-family: sans-serif;
+  font-size: 14px;
+  z-index: 1;
+  display: none;
+  position: absolute;
+  left: 19%;
+  bottom: 65%;
+  background-color: #333;
+  color: white;
+  padding: 5px;
+  border-radius: 5px;
+  transition: 200ms;
+}
+.BannersLink:hover::after{
+  display: block;
+  transition-delay: 200ms;
+  opacity: 1;
+}
+.SairLink::after {
+  content: "Sair";
+  font-family: sans-serif;
+  font-size: 14px;
+  z-index: 1;
+  display: none;
+  position: absolute;
+  left: 21.5%;
+  bottom: 65%;
+  background-color: #333;
+  color: white;
+  padding: 5px;
+  border-radius: 5px;
+  transition: 200ms;
+}
+.SairLink:hover::after{
+  display: block;
+  transition-delay: 200ms;
+  opacity: 1;
+}
+.HR {
+  width: 80%;
+  color: white;
+  background-color: white;
+}
+.Whatsapp {
+  text-decoration: none;
+  color: chartreuse;
+  text-decoration-color: chartreuse;
+}
+.HrDiv {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.Centralizar {
+  margin-top: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.LinkPersonalizado {
+  color: white;
+  font-family: fantasy;
+  font-size: 20px;
+  transition: 200ms;
+}
+.LinkPersonalizado:hover {
+  color: white;
+  transition: 200ms;
+  border-bottom: white solid 3px;
+  border-radius: 3px;
+}
+.ButaoPesquisa {
+  background: none;
+  border: none;
+  color: white;
+}
+@keyframes gradient{
+  0%{
+      background-position: 0% 50%;
+  }
+  50%{
+      background-position: 100% 50%;
+  }
+  100%{
+      background-position: 0% 50%;
+  }
+}
+
+
+
+
+
+
+/*para com essa viadagi*/

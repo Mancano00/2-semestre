@@ -1,0 +1,47 @@
+@model IEnumerable<BrosBurger.Models.Usuario>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1 class="H1Título">Usuarios</h1>
+
+<p>
+    <a asp-action="Create" class="btn btn-primary">Novo</a>
+</p>
+<table class="table text-white">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.NomeUsuario)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.LoginUsuario)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SenhaUsuario)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.NomeUsuario)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LoginUsuario)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SenhaUsuario)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.UsuarioId" class="btn btn-primary">Editar</a> |
+                <a asp-action="Details" asp-route-id="@item.UsuarioId" class="btn btn-success">Detalhes</a> |
+                <a asp-action="Delete" asp-route-id="@item.UsuarioId" class="btn btn-danger">Deletar</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

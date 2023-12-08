@@ -1,0 +1,53 @@
+@model IEnumerable<BrosBurger.Models.Produto>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1 class="H1Título">Produtos</h1>
+
+<p>
+    <a asp-action="Create" class="btn btn-primary">Novo</a>
+</p>
+<table class="table text-white Tabela">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.NomeProduto)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DescricaoProduto)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ValorProduto)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Categoria)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td class="W25">
+                @Html.DisplayFor(modelItem => item.NomeProduto)
+            </td>
+            <td class="W25">
+                @Html.DisplayFor(modelItem => item.DescricaoProduto)
+            </td>
+            <td class="W10">
+                @Html.DisplayFor(modelItem => item.ValorProduto)
+            </td>
+            <td class="W15">
+                @Html.DisplayFor(modelItem => item.Categoria.NomeCategoria)
+            </td>
+            <td class="W25">
+                <a asp-action="Edit" asp-route-id="@item.ProdutoId" class="btn btn-primary">Editar</a> |
+                <a asp-action="Details" asp-route-id="@item.ProdutoId" class="btn btn-success">Detalhes</a> |
+                <a asp-action="Delete" asp-route-id="@item.ProdutoId" class="btn btn-danger">Deletar</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
